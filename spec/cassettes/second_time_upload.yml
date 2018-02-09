@@ -1,0 +1,413 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://www.googleapis.com/drive/v3/files?q=mimeType=%27application/vnd.google-apps.folder%27%20and%20name=%27My%27%20and%20%2714lJD-WCxgCd9JxkBnsJktXhw0XrwrsLD%27%20in%20parents%20and%20not%20trashed
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      User-Agent:
+      - |-
+        My app/0.0.0 google-api-ruby-client/0.19.6 Linux/4.13.0-32-generic
+         (gzip)
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip,deflate
+      Date:
+      - Fri, 09 Feb 2018 13:33:18 GMT
+      Authorization: token
+      Content-Type:
+      - application/x-www-form-urlencoded
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Expires:
+      - Fri, 09 Feb 2018 13:33:18 GMT
+      Date:
+      - Fri, 09 Feb 2018 13:33:18 GMT
+      Cache-Control:
+      - private, max-age=0, must-revalidate, no-transform
+      Vary:
+      - Origin
+      - X-Origin
+      Content-Type:
+      - application/json; charset=UTF-8
+      Content-Encoding:
+      - gzip
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      Server:
+      - GSE
+      Alt-Svc:
+      - hq=":443"; ma=2592000; quic=51303431; quic=51303339; quic=51303338; quic=51303337;
+        quic=51303335,quic=":443"; ma=2592000; v="41,39,38,37,35"
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: |
+        {
+         "kind": "drive#fileList",
+         "incompleteSearch": false,
+         "files": [
+          {
+           "kind": "drive#file",
+           "id": "1jaUyw6uHOtmlD894dyrSc3B3FgXpKLI1",
+           "name": "My",
+           "mimeType": "application/vnd.google-apps.folder"
+          }
+         ]
+        }
+    http_version: 
+  recorded_at: Fri, 09 Feb 2018 13:33:18 GMT
+- request:
+    method: get
+    uri: https://www.googleapis.com/drive/v3/files?q=mimeType=%27application/vnd.google-apps.folder%27%20and%20name=%27First%27%20and%20%271jaUyw6uHOtmlD894dyrSc3B3FgXpKLI1%27%20in%20parents%20and%20not%20trashed
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      User-Agent:
+      - |-
+        My app/0.0.0 google-api-ruby-client/0.19.6 Linux/4.13.0-32-generic
+         (gzip)
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip,deflate
+      Date:
+      - Fri, 09 Feb 2018 13:33:18 GMT
+      Authorization: token
+      Content-Type:
+      - application/x-www-form-urlencoded
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Expires:
+      - Fri, 09 Feb 2018 13:33:18 GMT
+      Date:
+      - Fri, 09 Feb 2018 13:33:18 GMT
+      Cache-Control:
+      - private, max-age=0, must-revalidate, no-transform
+      Vary:
+      - Origin
+      - X-Origin
+      Content-Type:
+      - application/json; charset=UTF-8
+      Content-Encoding:
+      - gzip
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      Server:
+      - GSE
+      Alt-Svc:
+      - hq=":443"; ma=2592000; quic=51303431; quic=51303339; quic=51303338; quic=51303337;
+        quic=51303335,quic=":443"; ma=2592000; v="41,39,38,37,35"
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: |
+        {
+         "kind": "drive#fileList",
+         "incompleteSearch": false,
+         "files": [
+          {
+           "kind": "drive#file",
+           "id": "1QZyHJTTvWmlLJMgI81QpXzec-ICkYWxR",
+           "name": "First",
+           "mimeType": "application/vnd.google-apps.folder"
+          }
+         ]
+        }
+    http_version: 
+  recorded_at: Fri, 09 Feb 2018 13:33:18 GMT
+- request:
+    method: get
+    uri: https://www.googleapis.com/drive/v3/files?q=mimeType=%27application/vnd.google-apps.folder%27%20and%20name=%27Dir%27%20and%20%271QZyHJTTvWmlLJMgI81QpXzec-ICkYWxR%27%20in%20parents%20and%20not%20trashed
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      User-Agent:
+      - |-
+        My app/0.0.0 google-api-ruby-client/0.19.6 Linux/4.13.0-32-generic
+         (gzip)
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip,deflate
+      Date:
+      - Fri, 09 Feb 2018 13:33:18 GMT
+      Authorization: token
+      Content-Type:
+      - application/x-www-form-urlencoded
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Expires:
+      - Fri, 09 Feb 2018 13:33:19 GMT
+      Date:
+      - Fri, 09 Feb 2018 13:33:19 GMT
+      Cache-Control:
+      - private, max-age=0, must-revalidate, no-transform
+      Vary:
+      - Origin
+      - X-Origin
+      Content-Type:
+      - application/json; charset=UTF-8
+      Content-Encoding:
+      - gzip
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      Server:
+      - GSE
+      Alt-Svc:
+      - hq=":443"; ma=2592000; quic=51303431; quic=51303339; quic=51303338; quic=51303337;
+        quic=51303335,quic=":443"; ma=2592000; v="41,39,38,37,35"
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: |
+        {
+         "kind": "drive#fileList",
+         "incompleteSearch": false,
+         "files": [
+          {
+           "kind": "drive#file",
+           "id": "1Xp-xe1U9iso7qxcQujootjwujQvkRlzx",
+           "name": "Dir",
+           "mimeType": "application/vnd.google-apps.folder"
+          }
+         ]
+        }
+    http_version: 
+  recorded_at: Fri, 09 Feb 2018 13:33:19 GMT
+- request:
+    method: get
+    uri: https://www.googleapis.com/drive/v3/files?q=mimeType=%27application/vnd.google-apps.folder%27%20and%20name=%272018%27%20and%20%271Xp-xe1U9iso7qxcQujootjwujQvkRlzx%27%20in%20parents%20and%20not%20trashed
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      User-Agent:
+      - |-
+        My app/0.0.0 google-api-ruby-client/0.19.6 Linux/4.13.0-32-generic
+         (gzip)
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip,deflate
+      Date:
+      - Fri, 09 Feb 2018 13:33:19 GMT
+      Authorization: token
+      Content-Type:
+      - application/x-www-form-urlencoded
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Expires:
+      - Fri, 09 Feb 2018 13:33:19 GMT
+      Date:
+      - Fri, 09 Feb 2018 13:33:19 GMT
+      Cache-Control:
+      - private, max-age=0, must-revalidate, no-transform
+      Vary:
+      - Origin
+      - X-Origin
+      Content-Type:
+      - application/json; charset=UTF-8
+      Content-Encoding:
+      - gzip
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      Server:
+      - GSE
+      Alt-Svc:
+      - hq=":443"; ma=2592000; quic=51303431; quic=51303339; quic=51303338; quic=51303337;
+        quic=51303335,quic=":443"; ma=2592000; v="41,39,38,37,35"
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: |
+        {
+         "kind": "drive#fileList",
+         "incompleteSearch": false,
+         "files": [
+          {
+           "kind": "drive#file",
+           "id": "1fYbz2CK4B-3UIReKOhH-ny827a-2RLfr",
+           "name": "2018",
+           "mimeType": "application/vnd.google-apps.folder"
+          }
+         ]
+        }
+    http_version: 
+  recorded_at: Fri, 09 Feb 2018 13:33:19 GMT
+- request:
+    method: post
+    uri: https://www.googleapis.com/upload/drive/v3/files
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      User-Agent:
+      - |-
+        My app/0.0.0 google-api-ruby-client/0.19.6 Linux/4.13.0-32-generic
+         (gzip)
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip,deflate
+      Date:
+      - Fri, 09 Feb 2018 13:33:19 GMT
+      Content-Type:
+      - application/json
+      Authorization: token
+      X-Goog-Upload-Protocol:
+      - resumable
+      X-Goog-Upload-Command:
+      - start
+      X-Goog-Upload-Header-Content-Length:
+      - '2461'
+      X-Goog-Upload-Header-Content-Type:
+      - text/plain
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Guploader-Uploadid:
+      - AEnB2Uq-2l5E0M5jvA42OqOcDo9durlKD5EpNgACQuWngi-AAY95gyZsTp8Q13gC4aoFa1B4uEjS1y8uWS6oaDtZSMZqcJRzPejhDp-twoyiVTkyhikxS5U
+      X-Goog-Upload-Status:
+      - active
+      X-Goog-Upload-Url:
+      - https://www.googleapis.com/upload/drive/v3/files?upload_id=AEnB2Uq-2l5E0M5jvA42OqOcDo9durlKD5EpNgACQuWngi-AAY95gyZsTp8Q13gC4aoFa1B4uEjS1y8uWS6oaDtZSMZqcJRzPejhDp-twoyiVTkyhikxS5U&upload_protocol=resumable
+      X-Goog-Upload-Control-Url:
+      - https://www.googleapis.com/upload/drive/v3/files?upload_id=AEnB2Uq-2l5E0M5jvA42OqOcDo9durlKD5EpNgACQuWngi-AAY95gyZsTp8Q13gC4aoFa1B4uEjS1y8uWS6oaDtZSMZqcJRzPejhDp-twoyiVTkyhikxS5U&upload_protocol=resumable
+      X-Goog-Upload-Chunk-Granularity:
+      - '262144'
+      X-Goog-Upload-Header-Vary:
+      - Origin
+      - X-Origin
+      X-Goog-Upload-Header-X-Google-Backends:
+      - vsg1:4533
+      X-Goog-Upload-Header-X-Google-Session-Info:
+      - CKCIo8CCAhoCGAY6bwoPZHJpdmUtcm9zeS1wcm9kEgVkcml2ZRi50p-o4AwiSDQzODE3MTA2ODcyOS1yNWhtMW81NTh0dDdiNGQxYTFnbDU4MG9ocW1ocDVmdS5hcHBzLmdvb2dsZXVzZXJjb250ZW50LmNvbTDxDjDvDkqXARKDAXlhMjkuR2x4ZEJmU0lBM1lSejFyLWZtcng0N0NGNXlTc1A3MWdzcDJ4WDViWGxIWS1XY0dnVmdhQy1RT0VQRXB4Mk9YV2htR0x6NG9VM0c4SW1FNkQ5THZkb0dHMW45UjVlWGJYdi0tdHB5VkNDT3pqZFR6MHdfbEk0SWtFQTc4a1RnMAQ6DTEvODVxMExHM2lRLX4
+      X-Goog-Upload-Header-Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      X-Goog-Upload-Header-Pragma:
+      - no-cache
+      X-Goog-Upload-Header-Expires:
+      - Mon, 01 Jan 1990 00:00:00 GMT
+      X-Goog-Upload-Header-Date:
+      - Fri, 09 Feb 2018 13:33:19 GMT
+      Content-Length:
+      - '0'
+      Date:
+      - Fri, 09 Feb 2018 13:33:19 GMT
+      Server:
+      - UploadServer
+      Content-Type:
+      - text/html; charset=UTF-8
+      Alt-Svc:
+      - hq=":443"; ma=2592000; quic=51303431; quic=51303339; quic=51303338; quic=51303337;
+        quic=51303335,quic=":443"; ma=2592000; v="41,39,38,37,35"
+    body:
+      encoding: UTF-8
+      string: ''
+    http_version: 
+  recorded_at: Fri, 09 Feb 2018 13:33:19 GMT
+- request:
+    method: post
+    uri: https://www.googleapis.com/upload/drive/v3/files?upload_id=AEnB2Uq-2l5E0M5jvA42OqOcDo9durlKD5EpNgACQuWngi-AAY95gyZsTp8Q13gC4aoFa1B4uEjS1y8uWS6oaDtZSMZqcJRzPejhDp-twoyiVTkyhikxS5U&upload_protocol=resumable
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      User-Agent:
+      - |-
+        My app/0.0.0 google-api-ruby-client/0.19.6 Linux/4.13.0-32-generic
+         (gzip)
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip,deflate
+      Date:
+      - Fri, 09 Feb 2018 13:33:19 GMT
+      Content-Type:
+      - text/plain
+      Authorization: token
+      X-Goog-Upload-Command:
+      - upload, finalize
+      X-Goog-Upload-Offset:
+      - '0'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Guploader-Uploadid:
+      - AEnB2Uq-2l5E0M5jvA42OqOcDo9durlKD5EpNgACQuWngi-AAY95gyZsTp8Q13gC4aoFa1B4uEjS1y8uWS6oaDtZSMZqcJRzPejhDp-twoyiVTkyhikxS5U
+      X-Goog-Upload-Status:
+      - final
+      Vary:
+      - Origin
+      - X-Origin
+      Content-Type:
+      - application/json; charset=UTF-8
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Pragma:
+      - no-cache
+      Expires:
+      - Mon, 01 Jan 1990 00:00:00 GMT
+      Date:
+      - Fri, 09 Feb 2018 13:33:20 GMT
+      Content-Length:
+      - '122'
+      Server:
+      - UploadServer
+      Alt-Svc:
+      - hq=":443"; ma=2592000; quic=51303431; quic=51303339; quic=51303338; quic=51303337;
+        quic=51303335,quic=":443"; ma=2592000; v="41,39,38,37,35"
+    body:
+      encoding: UTF-8
+      string: |
+        {
+         "kind": "drive#file",
+         "id": "1JNNHxOyu9ydXuckKrWnSzRQvz_pzNrEK",
+         "name": "Gemfile.lock",
+         "mimeType": "text/plain"
+        }
+    http_version: 
+  recorded_at: Fri, 09 Feb 2018 13:33:20 GMT
+recorded_with: VCR 4.0.0

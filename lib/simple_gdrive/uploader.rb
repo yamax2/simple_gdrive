@@ -9,6 +9,7 @@ module SimpleGdrive
     OOB_URI = 'urn:ietf:wg:oauth:2.0:oob'.freeze
     USER_ID = 'default'.freeze
     FOLDER_MIME_TYPE = 'application/vnd.google-apps.folder'.freeze
+    OPTIONS = {retries: 5}.freeze
 
     def initialize(app_name:, base_folder_id:, credential_file:, client_secrets_file:)
       @app_name = app_name
@@ -26,7 +27,7 @@ module SimpleGdrive
         {name: filename, parents: [parent_id]},
         upload_source: upload_source,
         content_type: content_type,
-        options: options
+        options: OPTIONS
       )
 
       {id: file.id, parent_id: parent_id}
@@ -74,7 +75,7 @@ module SimpleGdrive
 
       service.create_file(
         {name: name, mime_type: FOLDER_MIME_TYPE, parents: [folder_id]},
-        options: options
+        options: OPTIONS
       ).id
     end
 
@@ -92,10 +93,6 @@ module SimpleGdrive
 
       credentials = authorizer.get_credentials(USER_ID)
       credentials || auth_request(authorizer)
-    end
-
-    def options
-      {retries: 5}
     end
 
     def service

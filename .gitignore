@@ -11,5 +11,5 @@
 .rspec_status
 .ruby-version
 .idea
-client_secret.json
 Gemfile.lock
+spec/fixtures/client_secrets.json

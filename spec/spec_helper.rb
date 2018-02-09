@@ -20,9 +20,11 @@ VCR.configure do |c|
   c.cassette_library_dir = 'spec/cassettes'
   c.hook_into :webmock
 
-  # c.before_record { |i| i.request.uri.sub! Rails.application.secrets.telegram_token, '.token.' }
-  # c.before_playback { |i| i.request.uri.gsub! '.token.', Rails.application.secrets.telegram_token }
-  # c.before_http_request(:real?) { |request| request.uri.gsub! '.token.', Rails.application.secrets.telegram_token }
+  # remove all secrets from cassettes
+  c.before_record do |i|
+    i.request.body = ''
+    i.request.headers['Authorization'] = 'token'
+  end
 
   c.configure_rspec_metadata!
 end

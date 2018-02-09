@@ -13,7 +13,7 @@ module SimpleGdrive
     @config ||= Config.new.tap do |config|
       config.base_folder_id = '14lJD-WCxgCd9JxkBnsJktXhw0XrwrsLD'
       config.app_name = 'GDrive Simple Uploader'
-      config.client_secrets_file = 'client_secret.json'
+      config.client_secrets_file = 'client_secrets.json'
       config.credential_file = File.join(
         Dir.home,
         '.credentials',
