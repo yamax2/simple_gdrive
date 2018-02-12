@@ -52,6 +52,19 @@ SimpleGdrive.upload '2018/01/MyMoney/money.csv', 'money.csv'
 folder id:<br>
 ![folder_id](https://mytm.tk/pcmsk/folder_id.png) 
 
+import local csv to google drive table:
+```ruby
+CSV.open(tempfile_path, 'w', col_sep: "\t") do |output|
+  output << ...
+  ...
+end
+
+SimpleGdrive.upload 'my/reports/folder/report', 
+                    tempfile_path, 
+                    content_type: 'text/csv',
+                    mime_type: 'application/vnd.google-apps.spreadsheet' 
+```
+
 ## Known issues
 
 * incorrect behaviour with cyrillic symbols in filenames:
