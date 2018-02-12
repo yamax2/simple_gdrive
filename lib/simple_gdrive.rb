@@ -26,12 +26,12 @@ module SimpleGdrive
     yield config
   end
 
-  def self.upload(full_filename, upload_source, content_type: 'text/plain')
+  def self.upload(full_filename, upload_source, content_type: 'text/plain', mime_type: nil)
     Uploader.new(
       app_name: config.app_name,
       base_folder_id: config.base_folder_id,
       credential_file: config.credential_file,
       client_secrets_file: config.client_secrets_file
-    ).call(full_filename, upload_source, content_type: content_type)
+    ).call(full_filename, upload_source, content_type: content_type, mime_type: mime_type)
   end
 end

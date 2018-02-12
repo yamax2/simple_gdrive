@@ -18,13 +18,16 @@ module SimpleGdrive
       @client_secrets_file = client_secrets_file
     end
 
-    def call(full_filename, upload_source, content_type:)
+    def call(full_filename, upload_source, content_type:, mime_type: nil)
       names = full_filename.split('/')
       filename = names.pop
       parent_id = find_folder(names)
 
+      meta = {name: filename, parents: [parent_id]}
+      meta[:mime_type] = mime_type if mime_type
+
       file = service.create_file(
-        {name: filename, parents: [parent_id]},
+        meta,
         upload_source: upload_source,
         content_type: content_type,
         options: OPTIONS
