@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 RSpec.describe SimpleGdrive::Uploader do
-  context '#call' do
+  describe '#call' do
     let(:uploader) do
       described_class.new(
         app_name: 'My app',
@@ -17,7 +17,7 @@ RSpec.describe SimpleGdrive::Uploader do
     context 'when credential file exists' do
       before do
         stub_request(
-          :post, 'https://www.googleapis.com/oauth2/v4/token'
+          :post, 'https://oauth2.googleapis.com/token'
         ).to_return(
           body: '{"access_token": "token", "token_type": "Bearer", "expires_in": 3600}',
           headers: {'Content-Type' => 'application/json'}
