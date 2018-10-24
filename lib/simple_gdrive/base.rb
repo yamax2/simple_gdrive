@@ -44,10 +44,8 @@ module SimpleGdrive
     end
 
     def credentials
-      @credentials ||= load_credentials
-    end
+      return @credentials if defined?(@credentials)
 
-    def load_credentials
       FileUtils.mkdir_p File.dirname(@credential_file)
 
       client_id = Google::Auth::ClientId.from_file(@client_secrets_file)
@@ -59,8 +57,7 @@ module SimpleGdrive
         token_store
       )
 
-      credentials = authorizer.get_credentials(USER_ID)
-      credentials || auth_request(authorizer)
+      @credentials = authorizer.get_credentials(USER_ID) || auth_request(authorizer)
     end
   end
 end

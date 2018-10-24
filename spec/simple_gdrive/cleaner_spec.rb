@@ -15,10 +15,6 @@ RSpec.describe SimpleGdrive::Cleaner do
     end
 
     context 'when credential file exists' do
-
-    end
-
-    context 'when credentials file not exists' do
       context 'when no files in folder' do
 
       end
@@ -35,9 +31,13 @@ RSpec.describe SimpleGdrive::Cleaner do
 
       end
 
-      context 'when include subfolder' do
+      context 'when includes subfolder' do
 
       end
+    end
+
+    context 'when credentials file not exists' do
+
     end
   end
 end
