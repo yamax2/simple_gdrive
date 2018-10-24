@@ -1,5 +1,7 @@
 require 'simple_gdrive/version'
+require 'simple_gdrive/base'
 require 'simple_gdrive/uploader'
+require 'simple_gdrive/cleaner'
 
 module SimpleGdrive
   Config = Struct.new(

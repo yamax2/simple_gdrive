@@ -1,6 +1,9 @@
 require 'spec_helper'
 
 RSpec.describe SimpleGdrive::Uploader do
+  let(:credential_file) { 'spec/fixtures/gdrive-reports.yaml' }
+  let(:service) { uploader.instance_variable_get(:@service) }
+
   describe '#call' do
     let(:uploader) do
       described_class.new(
@@ -10,9 +13,6 @@ RSpec.describe SimpleGdrive::Uploader do
         client_secrets_file: 'spec/fixtures/client_secrets_stub.json'
       )
     end
-
-    let(:credential_file) { 'spec/fixtures/gdrive-reports.yaml' }
-    let(:service) { uploader.instance_variable_get(:@service) }
 
     context 'when credential file exists' do
       before do

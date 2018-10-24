@@ -13,3 +13,4 @@
 .idea
 Gemfile.lock
 spec/fixtures/client_secrets.json
+test
