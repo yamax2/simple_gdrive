@@ -44,7 +44,7 @@ end
 ```
 3. Start uploading test file from rails console and follow instructions to create `credentials.yaml`.
 
-File upload
+### File upload
 ```ruby
 SimpleGdrive.upload '2018/01/MyMoney/money.csv', 'money.csv'
 ```
@@ -63,6 +63,12 @@ SimpleGdrive.upload 'my/reports/folder/report',
                     tempfile_path, 
                     content_type: 'text/csv',
                     mime_type: 'application/vnd.google-apps.spreadsheet' 
+```
+
+### Folder clear
+removes all files and folders in 
+```ruby
+SimpleGdrive.clear
 ```
 
 ## Known issues

@@ -25,4 +25,19 @@ RSpec.describe SimpleGdrive do
       expect(uploader).to have_received(:call)
     end
   end
+
+  describe '.clear' do
+    let(:cleaner) { instance_double(SimpleGdrive::Cleaner) }
+
+    before do
+      allow(SimpleGdrive::Cleaner).to receive(:new).and_return(cleaner)
+      allow(cleaner).to receive(:call)
+
+      described_class.clear
+    end
+
+    it 'calls cleaner' do
+      expect(cleaner).to have_received(:call)
+    end
+  end
 end

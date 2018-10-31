@@ -36,4 +36,13 @@ module SimpleGdrive
       client_secrets_file: config.client_secrets_file
     ).call(full_filename, upload_source, content_type: content_type, mime_type: mime_type)
   end
+
+  def self.clear
+    Cleaner.new(
+      app_name: config.app_name,
+      base_folder_id: config.base_folder_id,
+      credential_file: config.credential_file,
+      client_secrets_file: config.client_secrets_file
+    ).call
+  end
 end

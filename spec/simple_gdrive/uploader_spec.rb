@@ -2,7 +2,6 @@ require 'spec_helper'
 
 RSpec.describe SimpleGdrive::Uploader do
   let(:credential_file) { 'spec/fixtures/gdrive-reports.yaml' }
-  let(:service) { uploader.instance_variable_get(:@service) }
 
   describe '#call' do
     let(:uploader) do
@@ -15,6 +14,8 @@ RSpec.describe SimpleGdrive::Uploader do
     end
 
     context 'when credential file exists' do
+      let(:service) { uploader.instance_variable_get(:@service) }
+
       before do
         stub_request(
           :post, 'https://oauth2.googleapis.com/token'
@@ -22,14 +23,12 @@ RSpec.describe SimpleGdrive::Uploader do
           body: '{"access_token": "token", "token_type": "Bearer", "expires_in": 3600}',
           headers: {'Content-Type' => 'application/json'}
         )
-      end
 
-      before do
         uploader.send(:service)
         allow(service).to receive(:create_file).and_call_original
       end
 
-      context 'when when first time uploading' do
+      context 'when first time uploading' do
         subject do
           VCR.use_cassette('first_time_upload') do
             uploader.call(
@@ -81,7 +80,7 @@ RSpec.describe SimpleGdrive::Uploader do
         allow(uploader).to receive(:gets).and_return('value')
       end
 
-      it 'creates a new file and asks for code' do
+      it 'creates a new file and asks for a code' do
         expect { subject }.to raise_error(Signet::AuthorizationError)
         expect(File.exist?(credential_file)).to be_truthy
         expect(uploader).to have_received(:gets).once
