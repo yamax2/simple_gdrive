@@ -1,4 +1,5 @@
 require 'simple_gdrive/version'
+require 'simple_gdrive/authorizer'
 require 'simple_gdrive/base'
 require 'simple_gdrive/uploader'
 require 'simple_gdrive/cleaner'
@@ -29,20 +30,12 @@ module SimpleGdrive
   end
 
   def self.upload(full_filename, upload_source, content_type: 'text/plain', mime_type: nil)
-    Uploader.new(
-      app_name: config.app_name,
-      base_folder_id: config.base_folder_id,
-      credential_file: config.credential_file,
-      client_secrets_file: config.client_secrets_file
-    ).call(full_filename, upload_source, content_type: content_type, mime_type: mime_type)
+    Uploader
+      .new(base_folder_id: config.base_folder_id)
+      .call(full_filename, upload_source, content_type: content_type, mime_type: mime_type)
   end
 
   def self.clear
-    Cleaner.new(
-      app_name: config.app_name,
-      base_folder_id: config.base_folder_id,
-      credential_file: config.credential_file,
-      client_secrets_file: config.client_secrets_file
-    ).call
+    Cleaner.new(base_folder_id: config.base_folder_id).call
   end
 end
