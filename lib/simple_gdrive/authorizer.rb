@@ -7,7 +7,6 @@ module SimpleGdrive
   class Authorizer
     OOB_URI = 'urn:ietf:wg:oauth:2.0:oob'.freeze
     DEFAULT_USER_ID = 'default'.freeze
-    FOLDER_MIME_TYPE = 'application/vnd.google-apps.folder'.freeze
     API_SCOPE = [Google::Apis::DriveV3::AUTH_DRIVE].freeze
 
     def call
