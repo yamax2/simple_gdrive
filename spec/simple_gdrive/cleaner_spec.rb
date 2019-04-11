@@ -5,7 +5,8 @@ RSpec.describe SimpleGdrive::Cleaner do
   let(:client_secrets_file) { 'spec/fixtures/client_secrets_stub.json' }
   let(:folder_id) { '1sEQxAl884h7yaJH2AG9qDc96JZgw5lVP' }
 
-  let(:cleaner) { described_class.new(base_folder_id: folder_id) }
+  let(:move_to_trash) { false }
+  let(:cleaner) { described_class.new(base_folder_id: folder_id, move_to_trash: move_to_trash) }
   let(:google_service) { cleaner.instance_variable_get(:@service) }
 
   before do
@@ -22,7 +23,9 @@ RSpec.describe SimpleGdrive::Cleaner do
     )
 
     cleaner.send(:service)
+
     allow(google_service).to receive(:delete_file).and_call_original
+    allow(google_service).to receive(:update_file).and_call_original
   end
 
   after { Timecop.return }
@@ -47,6 +50,7 @@ RSpec.describe SimpleGdrive::Cleaner do
 
   context 'when multiple pages' do
     let!(:folder_id) { '0BzUkuFsHnUS7OFZ2ZmFZMnl3clE' }
+
     subject { VCR.use_cassette('clear_134_files') { cleaner.call } }
 
     it 'deletes all' do
@@ -71,6 +75,17 @@ RSpec.describe SimpleGdrive::Cleaner do
     it 'deletes both file and folder' do
       is_expected.to match_array %w[folder 12]
       expect(google_service).to have_received(:delete_file).twice
+    end
+  end
+
+  context 'when move to trash option' do
+    let(:move_to_trash) { true }
+
+    subject { VCR.use_cassette('clear_files_to_trash') { cleaner.call } }
+
+    it 'moves both file and folder to trash bin' do
+      is_expected.to match_array %w[folder zozo]
+      expect(google_service).to have_received(:update_file).twice
     end
   end
 end

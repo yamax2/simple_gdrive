@@ -13,6 +13,7 @@ module SimpleGdrive
       FileUtils.mkdir_p File.dirname(::SimpleGdrive.config.credential_file)
 
       credentials = user_authorizer.get_credentials(DEFAULT_USER_ID)
+      # FIXME: rails?
       credentials = request_credentials if credentials.nil? && defined?(Rails::Console)
 
       credentials

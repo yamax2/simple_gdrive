@@ -2,13 +2,19 @@ module SimpleGdrive
   # Cleans the directory
   # Returns array of removed file names
   class Cleaner < Base
+    def initialize(base_folder_id:, move_to_trash: false)
+      @base_folder_id = base_folder_id
+      @move_to_trash = move_to_trash
+    end
+
     def call
       @page_token = nil
       @files_to_remove = {}
 
-      begin
+      loop do
         fetch_batch
-      end until @page_token.nil?
+        break if @page_token.nil?
+      end
 
       remove_files
 
@@ -30,7 +36,13 @@ module SimpleGdrive
     end
 
     def remove_files
-      @files_to_remove.keys.each { |id| service.delete_file(id) }
+      @files_to_remove.keys.each do |id|
+        if @move_to_trash
+          service.update_file(id, {trashed: true}, {})
+        else
+          service.delete_file(id)
+        end
+      end
     end
   end
 end

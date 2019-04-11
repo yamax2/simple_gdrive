@@ -33,10 +33,26 @@ RSpec.describe SimpleGdrive do
       allow(SimpleGdrive::Cleaner).to receive(:new).and_return(cleaner)
       allow(cleaner).to receive(:call)
 
-      described_class.clear
+      described_class.clear(move_to_trash: true)
     end
 
     it 'calls cleaner' do
+      expect(SimpleGdrive::Cleaner).to have_received(:new).with(base_folder_id: String, move_to_trash: true)
+      expect(cleaner).to have_received(:call)
+    end
+  end
+
+  describe '.clear_trash' do
+    let(:cleaner) { instance_double(SimpleGdrive::TrashCleaner) }
+
+    before do
+      allow(SimpleGdrive::TrashCleaner).to receive(:new).and_return(cleaner)
+      allow(cleaner).to receive(:call)
+
+      described_class.clear_trash
+    end
+
+    it 'calls trash cleaner' do
       expect(cleaner).to have_received(:call)
     end
   end

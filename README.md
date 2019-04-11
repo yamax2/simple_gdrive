@@ -42,7 +42,7 @@ SimpleGdrive.configure do |config|
   config.credential_file = Rails.root.join('config', 'credentials.yaml') # optional, default ~/.credentials/gdrive-uploader.yaml  
 end
 ```
-3. Start uploading test file from rails console and follow instructions to create `credentials.yaml`.
+3. Call `Authorizer.call` in console and follow instructions to create `credentials.yaml`.
 
 ### File upload
 ```ruby
@@ -69,6 +69,14 @@ SimpleGdrive.upload 'my/reports/folder/report',
 removes all files and folders in 
 ```ruby
 SimpleGdrive.clear
+```
+
+option `move_to_trash`, default: `false`
+
+### Trash clear
+clears the user's trash bin
+```ruby
+SimpleGdrive.clear_trash
 ```
 
 ## Known issues

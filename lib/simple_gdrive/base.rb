@@ -2,12 +2,6 @@ require 'google/apis/drive_v3'
 
 module SimpleGdrive
   class Base
-    FOLDER_MIME_TYPE = 'application/vnd.google-apps.folder'.freeze
-    OPTIONS = {retries: 5}.freeze
-
-    def initialize(base_folder_id:)
-      @base_folder_id = base_folder_id
-    end
 
     private
 

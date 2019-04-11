@@ -1,0 +1,199 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://www.googleapis.com/drive/v3/files?fields=nextPageToken,%20files(id,%20name,%20parents)&q=%271sEQxAl884h7yaJH2AG9qDc96JZgw5lVP%27%20in%20parents%20and%20not%20trashed
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      User-Agent:
+      - GDrive Simple Uploader/0.0.0 google-api-ruby-client/0.28.7 Linux/4.18.0-17-generic
+        (gzip)
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip,deflate
+      Date:
+      - Thu, 11 Apr 2019 18:05:41 GMT
+      Authorization: token
+      Content-Type:
+      - application/x-www-form-urlencoded
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Expires:
+      - Thu, 11 Apr 2019 18:05:42 GMT
+      Date:
+      - Thu, 11 Apr 2019 18:05:42 GMT
+      Cache-Control:
+      - private, max-age=0, must-revalidate, no-transform
+      Vary:
+      - Origin
+      - X-Origin
+      Content-Type:
+      - application/json; charset=UTF-8
+      Content-Encoding:
+      - gzip
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      Server:
+      - GSE
+      Alt-Svc:
+      - quic=":443"; ma=2592000; v="46,44,43,39"
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: |
+        {
+         "files": [
+          {
+           "id": "1Jm-M2lHDKiIh4RGE3rzCiiFPhnz3XDUqVJNWtYQh3OU",
+           "name": "zozo",
+           "parents": [
+            "1sEQxAl884h7yaJH2AG9qDc96JZgw5lVP"
+           ]
+          },
+          {
+           "id": "1TnReZQx8jxT2hWYlu97xSNLWCBiBp28z",
+           "name": "folder",
+           "parents": [
+            "1sEQxAl884h7yaJH2AG9qDc96JZgw5lVP"
+           ]
+          }
+         ]
+        }
+    http_version:
+  recorded_at: Thu, 11 Apr 2019 18:05:42 GMT
+- request:
+    method: patch
+    uri: https://www.googleapis.com/drive/v3/files/1Jm-M2lHDKiIh4RGE3rzCiiFPhnz3XDUqVJNWtYQh3OU
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      User-Agent:
+      - GDrive Simple Uploader/0.0.0 google-api-ruby-client/0.28.7 Linux/4.18.0-17-generic
+        (gzip)
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip,deflate
+      Date:
+      - Thu, 11 Apr 2019 18:05:42 GMT
+      Content-Type:
+      - application/json
+      Authorization: token
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Pragma:
+      - no-cache
+      Expires:
+      - Mon, 01 Jan 1990 00:00:00 GMT
+      Date:
+      - Thu, 11 Apr 2019 18:05:42 GMT
+      Vary:
+      - Origin
+      - X-Origin
+      Content-Type:
+      - application/json; charset=UTF-8
+      Content-Encoding:
+      - gzip
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      Server:
+      - GSE
+      Alt-Svc:
+      - quic=":443"; ma=2592000; v="46,44,43,39"
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: |
+        {
+         "kind": "drive#file",
+         "id": "1Jm-M2lHDKiIh4RGE3rzCiiFPhnz3XDUqVJNWtYQh3OU",
+         "name": "zozo",
+         "mimeType": "application/vnd.google-apps.document"
+        }
+    http_version:
+  recorded_at: Thu, 11 Apr 2019 18:05:42 GMT
+- request:
+    method: patch
+    uri: https://www.googleapis.com/drive/v3/files/1TnReZQx8jxT2hWYlu97xSNLWCBiBp28z
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      User-Agent:
+      - GDrive Simple Uploader/0.0.0 google-api-ruby-client/0.28.7 Linux/4.18.0-17-generic
+        (gzip)
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip,deflate
+      Date:
+      - Thu, 11 Apr 2019 18:05:42 GMT
+      Content-Type:
+      - application/json
+      Authorization: token
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Pragma:
+      - no-cache
+      Expires:
+      - Mon, 01 Jan 1990 00:00:00 GMT
+      Date:
+      - Thu, 11 Apr 2019 18:05:43 GMT
+      Vary:
+      - Origin
+      - X-Origin
+      Content-Type:
+      - application/json; charset=UTF-8
+      Content-Encoding:
+      - gzip
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      Server:
+      - GSE
+      Alt-Svc:
+      - quic=":443"; ma=2592000; v="46,44,43,39"
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: |
+        {
+         "kind": "drive#file",
+         "id": "1TnReZQx8jxT2hWYlu97xSNLWCBiBp28z",
+         "name": "folder",
+         "mimeType": "application/vnd.google-apps.folder"
+        }
+    http_version:
+  recorded_at: Thu, 11 Apr 2019 18:05:43 GMT
+recorded_with: VCR 4.0.0

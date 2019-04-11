@@ -1,8 +1,10 @@
 require 'simple_gdrive/version'
+
 require 'simple_gdrive/authorizer'
 require 'simple_gdrive/base'
 require 'simple_gdrive/uploader'
 require 'simple_gdrive/cleaner'
+require 'simple_gdrive/trash_cleaner'
 
 module SimpleGdrive
   Config = Struct.new(
@@ -35,7 +37,14 @@ module SimpleGdrive
       .call(full_filename, upload_source, content_type: content_type, mime_type: mime_type)
   end
 
-  def self.clear
-    Cleaner.new(base_folder_id: config.base_folder_id).call
+  def self.clear(move_to_trash: false)
+    Cleaner.new(
+      base_folder_id: config.base_folder_id,
+      move_to_trash: move_to_trash
+    ).call
+  end
+
+  def self.clear_trash
+    TrashCleaner.new.call
   end
 end

@@ -1,6 +1,13 @@
 module SimpleGdrive
   # Uploads file
   class Uploader < Base
+    FOLDER_MIME_TYPE = 'application/vnd.google-apps.folder'.freeze
+    OPTIONS = {retries: 5}.freeze
+
+    def initialize(base_folder_id:)
+      @base_folder_id = base_folder_id
+    end
+
     def call(full_filename, upload_source, content_type:, mime_type: nil)
       names = full_filename.split('/')
       filename = names.pop
