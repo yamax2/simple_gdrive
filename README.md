@@ -66,7 +66,7 @@ SimpleGdrive.upload 'my/reports/folder/report',
 ```
 
 ### Folder clear
-removes all files and folders in 
+removes all files and folders in base folder
 ```ruby
 SimpleGdrive.clear
 ```
